@@ -19,6 +19,8 @@ install: check-uv ## Install Python and dependencies using uv
 	@echo "📦 Installing Python and dependencies with uv..."
 	@uv python install
 	@uv sync
+	@echo "📦 Installing pre-commit hooks..."
+	@uv run pre-commit install
 	@echo "✅ Installation complete!"
 
 clean-venv: ## Clean Python venv
