@@ -1,4 +1,4 @@
-.PHONY: help install clean format lint docs
+.PHONY: help install uninstall clean format lint docs
 export PATH := $(HOME)/.local/bin:$(PATH)
 
 ###############
@@ -23,10 +23,12 @@ install: check-uv ## Install Python and dependencies using uv
 	@uv run pre-commit install
 	@echo "✅ Installation complete!"
 
-clean-venv: ## Clean Python venv
-	@echo "🧹 Cleaning Python venv..."
+uninstall: ## Uninstall venv and pre-commit hooks
+	@echo "🧹 Uninstalling..."
+	@[ ! -d .venv ] || (uv run pre-commit uninstall 2>/dev/null || true)
+	@echo "🧹 Removing .venv..."
 	@[ ! -d .venv ] || rm -rf .venv
-	@echo "✅ Cleanup complete!"
+	@echo "✅ Uninstall complete!"
 
 clean-temp: ## Clean temporary files and caches
 	@echo "🧹 Cleaning temp files..."
