@@ -1,15 +1,15 @@
-# Computing Essentials
+# AI Engineering
 
 ## 📚 Description
-This is the hands-on portion of our Computing Essentials class.
+This is the hands-on portion of our AI Engineering class.
 - We will be using Python 3.13
 - We use **uv** for Python version management and package management
-- We will cover foundational development tools and practices
+- This repository covers the getting started portion of the course
 
-My hope is that this course will give you the essential skills to work effectively as a developer.
+My hope is that this course will give you the essential skills to build AI-powered applications.
 
 
-## 📋 Prerequisites 
+## 📋 Prerequisites
 
 ### 1. Install uv (Python Package Manager)
 
@@ -43,6 +43,8 @@ This will:
 - Install Python 3.13 (if not already installed)
 - Create a virtual environment
 - Install all required packages
+- Install pre-commit hooks
+- Register the Jupyter kernel
 
 
 ## 🗺️ Roadmap
@@ -59,6 +61,9 @@ This will:
 ```bash
 # Install everything
 make install
+
+# Uninstall (remove venv and hooks)
+make uninstall
 
 # Add a new package
 make add PKG=package-name
@@ -98,6 +103,7 @@ ce/
 ├── Makefile            # Build automation
 ├── pyproject.toml      # Project configuration (dependencies, Python version)
 ├── .python-version     # Python version pinning
+├── .pre-commit-config.yaml  # Pre-commit hooks configuration
 ├── assets/             # Images and static files
 ├── data/               # Data files for exercises
 ├── homework/           # Homework assignments

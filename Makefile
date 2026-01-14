@@ -21,6 +21,8 @@ install: check-uv ## Install Python and dependencies using uv
 	@uv sync
 	@echo "📦 Installing pre-commit hooks..."
 	@uv run pre-commit install
+	@echo "📦 Registering Jupyter kernel..."
+	@uv run python -m ipykernel install --user --name ce --display-name "Python (ce)"
 	@echo "✅ Installation complete!"
 
 uninstall: ## Uninstall venv and pre-commit hooks
